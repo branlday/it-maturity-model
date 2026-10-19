@@ -1,6 +1,6 @@
-# 5iveLevels IT Maturity Assessment
+# IT Maturity Assessment
 
-A facilitated IT maturity assessment from 5iveDays Strategy. An IT leader rates 22 domains on a five-level scale (Initial, Managed, Standardized, Predictable, Optimizing), backing higher ratings with each domain's stage milestones. IT staff and business users then rate the same domains blind. The readout shows the maturity level, where IT's view and the business's experience differ, and what to do next.
+A facilitated IT maturity assessment from 5iveDays Strategy (inspired by CMMI framework). An IT leader rates 22 domains on a five-level scale (Initial, Managed, Standardized, Predictable, Optimizing), backing higher ratings with each domain's stage milestones. IT staff and business users then rate the same domains blind. The readout shows the maturity level, where IT's view and the business's experience differ, and what to do next.
 
 ## Files
 
