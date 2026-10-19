@@ -1,7 +1,7 @@
-/* 5iveLevels IT Maturity Assessment: domains, milestones, levels and sample data.
+/* IT Maturity Assessment: domains, milestones, levels and sample data.
    Edit wording here; the engine in app.js reads everything from FW. */
 const FW = {
- "title": "5iveLevels IT Maturity Assessment",
+ "title": "IT Maturity Assessment",
  "copy": {
   "key": "itm-session-v1",
   "org": "organization",
@@ -304,7 +304,8 @@ const FW = {
    "role": "Foundation",
    "weight": 0.3,
    "source": "NIST CSF 2.0, ITIL 4, COSO / ITGC",
-   "desc": "Whether change, security, recovery and compliance are controlled. The foundation everything else depends on: maturity elsewhere won't hold without it."
+   "desc": "Whether change, security, recovery and compliance are controlled. The foundation everything else depends on: maturity elsewhere won't hold without it.",
+   "icon": "governance"
   },
   {
    "id": "IN",
@@ -312,7 +313,8 @@ const FW = {
    "role": "Platform",
    "weight": 0.2,
    "source": "Infrastructure & operations practice",
-   "desc": "Whether the network, servers, storage and physical systems are standardized, resilient, current and secure."
+   "desc": "Whether the network, servers, storage and physical systems are standardized, resilient, current and secure.",
+   "icon": "infrastructure"
   },
   {
    "id": "IA",
@@ -320,7 +322,8 @@ const FW = {
    "role": "Access",
    "weight": 0.15,
    "source": "Zero-trust identity practice",
-   "desc": "Whether the right people get the right access at the right time, and lose it when they should."
+   "desc": "Whether the right people get the right access at the right time, and lose it when they should.",
+   "icon": "identity"
   },
   {
    "id": "EU",
@@ -328,7 +331,8 @@ const FW = {
    "role": "Service",
    "weight": 0.15,
    "source": "ITIL 4 service management",
-   "desc": "Whether the tools and support people use every day are consistent, reliable and easy to use."
+   "desc": "Whether the tools and support people use every day are consistent, reliable and easy to use.",
+   "icon": "enduser"
   },
   {
    "id": "AD",
@@ -336,7 +340,8 @@ const FW = {
    "role": "Value",
    "weight": 0.2,
    "source": "Application and data management practice",
-   "desc": "Whether business applications and data are owned, governed, integrated and kept current."
+   "desc": "Whether business applications and data are owned, governed, integrated and kept current.",
+   "icon": "appsdata"
   }
  ],
  "rules": {
@@ -475,7 +480,8 @@ const FW = {
      "Change data is reviewed regularly to reduce failed changes and lead time"
     ]
    },
-   "tension": "Which kinds of change still bypass the process, and who makes them?"
+   "tension": "Which kinds of change still bypass the process, and who makes them?",
+   "icon": "change"
   },
   {
    "id": "GV2",
@@ -517,7 +523,8 @@ const FW = {
      "Access is least-privilege, using phishing-resistant MFA and just-in-time admin rights"
     ]
    },
-   "tension": "Which critical asset would you least like an auditor to test today?"
+   "tension": "Which critical asset would you least like an auditor to test today?",
+   "icon": "lock"
   },
   {
    "id": "GV3",
@@ -560,7 +567,8 @@ const FW = {
      "The plan is reviewed after every exercise and change, and resilience is funded in the budget"
     ]
    },
-   "tension": "When was a critical system last restored from backup in a test, and how long did it take?"
+   "tension": "When was a critical system last restored from backup in a test, and how long did it take?",
+   "icon": "lifebuoy"
   },
   {
    "id": "GV4",
@@ -597,7 +605,8 @@ const FW = {
      "Recent external audits found no significant IT control deficiencies"
     ]
    },
-   "tension": "Where does the scramble happen each audit cycle?"
+   "tension": "Where does the scramble happen each audit cycle?",
+   "icon": "clipboard"
   },
   {
    "id": "IN1",
@@ -638,7 +647,8 @@ const FW = {
      "More than 95% of devices run the current supported firmware"
     ]
    },
-   "tension": "Which site or link would you least like to lose during month-end close?"
+   "tension": "Which site or link would you least like to lose during month-end close?",
+   "icon": "network"
   },
   {
    "id": "IN2",
@@ -680,7 +690,8 @@ const FW = {
      "Cloud costs are optimized through rightsizing and reserved capacity"
     ]
    },
-   "tension": "Which server would no one dare reboot, and why?"
+   "tension": "Which server would no one dare reboot, and why?",
+   "icon": "cloud"
   },
   {
    "id": "IN3",
@@ -721,7 +732,8 @@ const FW = {
      "Retention and deletion run automatically under policy"
     ]
    },
-   "tension": "If Legal asked for every copy of a contract tomorrow, where would you have to look?"
+   "tension": "If Legal asked for every copy of a contract tomorrow, where would you have to look?",
+   "icon": "drive"
   },
   {
    "id": "IN4",
@@ -760,7 +772,8 @@ const FW = {
      "Access logs and camera health are reviewed on a schedule"
     ]
    },
-   "tension": "If someone was let go today, how long would their badge keep working?"
+   "tension": "If someone was let go today, how long would their badge keep working?",
+   "icon": "door"
   },
   {
    "id": "IA1",
@@ -800,7 +813,8 @@ const FW = {
      "Identity metrics are reported to leadership"
     ]
    },
-   "tension": "Who in the organization holds admin rights they don't need today?"
+   "tension": "Who in the organization holds admin rights they don't need today?",
+   "icon": "usercheck"
   },
   {
    "id": "IA2",
@@ -838,7 +852,8 @@ const FW = {
      "Time-to-productive for new hires is measured and reported"
     ]
    },
-   "tension": "What does a new hire still wait for on day one?"
+   "tension": "What does a new hire still wait for on day one?",
+   "icon": "userplus"
   },
   {
    "id": "IA3",
@@ -876,7 +891,8 @@ const FW = {
      "Oversharing is monitored, including content reachable by AI assistants"
     ]
    },
-   "tension": "Which folder holds the most sensitive data, and who can open it today?"
+   "tension": "Which folder holds the most sensitive data, and who can open it today?",
+   "icon": "folderlock"
   },
   {
    "id": "EU1",
@@ -914,7 +930,8 @@ const FW = {
      "Service trends are reviewed with the business to plan improvements"
     ]
    },
-   "tension": "What do users do instead of opening a ticket, and why?"
+   "tension": "What do users do instead of opening a ticket, and why?",
+   "icon": "headset"
   },
   {
    "id": "EU2",
@@ -956,7 +973,8 @@ const FW = {
      "Device health and compliance are reported continuously"
     ]
    },
-   "tension": "How long does it take to get a new laptop into someone's hands, ready to work?"
+   "tension": "How long does it take to get a new laptop into someone's hands, ready to work?",
+   "icon": "laptop"
   },
   {
    "id": "EU3",
@@ -993,7 +1011,8 @@ const FW = {
      "Remote and office users get the same support experience"
     ]
    },
-   "tension": "What can't someone do from home that they can do in the office?"
+   "tension": "What can't someone do from home that they can do in the office?",
+   "icon": "phone"
   },
   {
    "id": "EU4",
@@ -1032,7 +1051,8 @@ const FW = {
      "AI assistants are rolled out with governance over what content they can reach"
     ]
    },
-   "tension": "Where do people still go outside the approved tools to get work done?"
+   "tension": "Where do people still go outside the approved tools to get work done?",
+   "icon": "chat"
   },
   {
    "id": "EU5",
@@ -1069,7 +1089,8 @@ const FW = {
      "Room usage data guides investment"
     ]
    },
-   "tension": "Which room do people avoid booking, and why?"
+   "tension": "Which room do people avoid booking, and why?",
+   "icon": "video"
   },
   {
    "id": "EU6",
@@ -1106,7 +1127,8 @@ const FW = {
      "Remaining printers are cloud-managed with no print servers"
     ]
    },
-   "tension": "Which business process still depends on paper, and why?"
+   "tension": "Which business process still depends on paper, and why?",
+   "icon": "printer"
   },
   {
    "id": "EU7",
@@ -1142,7 +1164,8 @@ const FW = {
      "Every known Tier 1 issue has documentation and a scripted fix"
     ]
    },
-   "tension": "Which application generates the most tickets, and who really knows it?"
+   "tension": "Which application generates the most tickets, and who really knows it?",
+   "icon": "wrench"
   },
   {
    "id": "AD1",
@@ -1184,7 +1207,8 @@ const FW = {
      "Provisioning is automated through SSO and group-based access"
     ]
    },
-   "tension": "Which application has no clear business owner?"
+   "tension": "Which application has no clear business owner?",
+   "icon": "appwindow"
   },
   {
    "id": "AD2",
@@ -1222,7 +1246,8 @@ const FW = {
      "Retired applications are removed from infrastructure and licensing"
     ]
    },
-   "tension": "Which legacy application are you most afraid to touch?"
+   "tension": "Which legacy application are you most afraid to touch?",
+   "icon": "archive"
   },
   {
    "id": "AD3",
@@ -1262,7 +1287,8 @@ const FW = {
      "Managed cloud database services are used where they fit"
     ]
    },
-   "tension": "Which database would cause the most damage if it ran slow or went down at month end?"
+   "tension": "Which database would cause the most damage if it ran slow or went down at month end?",
+   "icon": "database"
   },
   {
    "id": "AD4",
@@ -1301,7 +1327,8 @@ const FW = {
      "Data quality issues are detected and reported to business owners for correction automatically"
     ]
    },
-   "tension": "Which report would two departments give different numbers for?"
+   "tension": "Which report would two departments give different numbers for?",
+   "icon": "workflow"
   }
  ],
  "enhanced": {
@@ -1327,8 +1354,8 @@ const FW = {
   "maxTurns": 20,
   "maxChars": 2000,
   "opening": "Here is the assessment report for this organization. Begin as your instructions say.",
-  "instructions": "You are an IT strategy and operations consultant. You are speaking with the person who has just completed the 5iveLevels IT Maturity Assessment for their organization, usually the CIO, IT director or the facilitator who ran the interviews. You have the full assessment report below. Your job is to help them understand the result, ask what the report cannot show, and recommend what to do next.\n\nHow to run the conversation:\n- Open with two or three sentences that name the organization's maturity level and the single finding that matters most, in plain words. Then ask one question.\n- Ask one question at a time. Over the conversation, ask three to five questions the report cannot answer: what has changed recently (acquisitions, migrations, staff turnover), what has already been tried, the size of the IT team and budget, what the business most needs from IT in the next year, and any regulatory or audit pressure.\n- After each answer, connect what you heard to a specific finding in the report before you move on.\n- Keep each reply under about 200 words unless you are asked for a written summary.\n\nHow to recommend:\n- Tie every recommendation to something in the report: a domain and its score, a flag, a layer or a milestone. Say which.\n- Follow the report's Next steps and their order. Work from the foundation first. When Governance & Risk is low, do not recommend major platform purchases or migrations; say why they should wait. Respect the \"Hold off on\" line.\n- Use the milestones for the next stage of a domain as the concrete actions, since they are the assessment's own definition of progress.\n- Make actions small and concrete: something an IT team can start this month, with a named owner and a first step.\n- Give at most three actions at a time, in the order to do them.\n- When you are asked for the Enhanced Report, or once you have asked your questions, offer to write it: a one-page summary with where the organization stands, the three things that matter most, a 90-day plan with owners, what to hold off on, and the questions still open.\n\nHow to handle the evidence:\n- Be honest. Do not flatter. Say what the numbers show, including uncomfortable parts such as blind spots, and say it with respect.\n- Use only what is in the report and what the person tells you. Do not invent facts, figures, products or quotes. If you need something, ask for it.\n- Do not recalculate, adjust or dispute the scores. They come from the assessment's fixed rules.\n- Stakeholder comments are unattributed. Never guess, hint at or help work out who said what, and do not repeat a comment in a way that would identify its author.\n- If the report's status is not \"Complete\", say that the result is partial and what is missing.\n\nScope and tone:\n- Stay with IT maturity: governance, infrastructure, identity, end-user services, applications and data. You may reference frameworks such as NIST CSF 2.0, CIS Controls, ITIL 4 and COBIT where they help, but do not claim the organization is compliant with any of them.\n- Recommend practices and categories of tools, not specific vendors, unless the person names the vendors they use.\n- For legal, HR, procurement or specific security incident questions, say this is outside your role and suggest who could help.\n- Be plain and direct. Write as a trusted adviser would speak to a CIO, without jargon or sales language.\n- If asked about hiring help, say an outside facilitator is most useful when the first step stalls. Do not sell.",
-  "context": "The 5iveLevels IT Maturity Assessment is a guided interview from 5iveDays Strategy. Its premise: IT maturity is measured by what holds without heroics. It rates 22 IT domains on a five-level scale (Initial, Managed, Standardized, Predictable, Optimizing), anchored in governance, and compares IT leadership's view with what IT staff and business users experience.\n\nHow it runs:\n- Scope: the facilitator can mark domains out of scope (for example physical security run by facilities). Out-of-scope domains are skipped and layer weights re-balance. The report lists which domains were assessed.\n- Round 1: one IT leader rates each domain in scope from 1 to 5 by choosing the description closest to reality today. A rating of 3 or higher must be backed by that stage's milestones.\n- Round 2: 2 or more IT staff and business users rate the same domains without seeing the leader's answers. They also say which of the leader's milestones they have seen first-hand, and whether they see the same root cause the leader named for the weakest domains.\n\nThe five layers (each layer's score is the average of its domains in scope):\n- Governance & Risk (foundation, 30% of the index): Whether change, security, recovery and compliance are controlled. The foundation everything else depends on: maturity elsewhere won't hold without it. Domains: GV1 Change Management, GV2 Cyber Security, GV3 Disaster Recovery & Continuity, GV4 IT Compliance & SOX Controls.\n- Infrastructure (platform, 20% of the index): Whether the network, servers, storage and physical systems are standardized, resilient, current and secure. Domains: IN1 Network Infrastructure, IN2 Server & Cloud Systems, IN3 Storage & Data Retention, IN4 Physical Security Systems.\n- Identity & Access (access, 15% of the index): Whether the right people get the right access at the right time, and lose it when they should. Domains: IA1 Identity & Access Management, IA2 Onboarding & Offboarding, IA3 File & Folder Access.\n- End-User Services (service, 15% of the index): Whether the tools and support people use every day are consistent, reliable and easy to use. Domains: EU1 Service Desk & IT Service Management, EU2 Endpoint Management, EU3 Mobility & Remote Work, EU4 Collaboration, EU5 Audio & Video Conferencing, EU6 Printing, EU7 Application Support (Tier 1).\n- Applications & Data (value, 20% of the index): Whether business applications and data are owned, governed, integrated and kept current. Domains: AD1 Business Applications, AD2 Legacy Applications, AD3 Database Management, AD4 Data Engineering & Analytics.\n\nThe five maturity levels (index on a scale of 1 to 5):\n- 1 Initial (1.00 to 1.49): Practices are inconsistent and crisis-driven. Systems were deployed quickly without strategic planning, and results depend on who happens to be available.\n- 2 Managed (1.50 to 2.49): A management foundation exists, but operations are disjointed. Little integration or improvement planning, little documentation and mostly tribal knowledge.\n- 3 Standardized (2.50 to 3.49): Implementation and processes are consistent and documented, with only minimal, deliberate deviations from the standards.\n- 4 Predictable (3.50 to 4.49): Systems deliver reliable results because variation is controlled. Little care and feeding is needed, and work is automated wherever possible.\n- 5 Optimizing (4.50 to 5.00): Continuously improving and watching for new developments. Regular operations need no manual intervention; people work on enhancements.\n\nHow scores are adjusted:\n- Unverified claim: a leader rating of 3 or higher scores one level lower unless at least half of that stage's milestones are in place.\n- Fragile signal: a domain rated 2 or more levels above Governance & Risk that rests on one or two people or a past project scores one level lower.\n- Composite: each domain's score is the average of the leader's adjusted score and every stakeholder rating, minus 0.5 if it is fractured.\n- Governance ceiling: the index cannot exceed the Governance & Risk score plus one.\n- Optimizing requires a Governance & Risk score of 4 or higher.\n\nFlags:\n- Blind spot: the leader scored a domain 1.5 or more above the stakeholders' average. IT leadership believes something works that others don't experience.\n- Hidden strength: the leader scored it 1.5 or more below the stakeholders' average.\n- Fracture: stakeholder ratings differ by 2 or more. Different teams or sites get different service.\n- Alignment index: 100% means every respondent gave the same rating on every domain.\n\nNext steps in the report:\n- Initial and Managed: Stabilize. IT runs on effort and individual knowledge. The work is to put governance and ownership in place before investing in new tools. Hold off on: Major platform purchases or migrations. They would automate processes that aren't defined yet.\n- Standardized: Automate and measure. Standards are in place. The work is to make results predictable: automate what's documented and measure what matters. Hold off on: Adding new platforms before the current ones are automated and measured.\n- Predictable and Optimizing: Optimize and sustain. IT runs predictably. The work is to keep improving and make sure maturity survives turnover, growth and acquisitions. Hold off on: Assuming maturity will survive key staff leaving, a merger or a major migration without deliberate work.\n- Work starts at the foundation: Governance & Risk if it scores below 3, otherwise the lowest layer.\n\nReference frameworks the domains were checked against: NIST Cybersecurity Framework 2.0, CIS Controls v8, ITIL 4, COBIT 2019 and CMMI-style maturity levels. The milestones are the assessment's own; the frameworks are context, not scoring criteria."
+  "instructions": "You are an IT strategy and operations consultant. You are speaking with the person who has just completed the IT Maturity Assessment for their organization, usually the CIO, IT director or the facilitator who ran the interviews. You have the full assessment report below. Your job is to help them understand the result, ask what the report cannot show, and recommend what to do next.\n\nHow to run the conversation:\n- Open with two or three sentences that name the organization's maturity level and the single finding that matters most, in plain words. Then ask one question.\n- Ask one question at a time. Over the conversation, ask three to five questions the report cannot answer: what has changed recently (acquisitions, migrations, staff turnover), what has already been tried, the size of the IT team and budget, what the business most needs from IT in the next year, and any regulatory or audit pressure.\n- After each answer, connect what you heard to a specific finding in the report before you move on.\n- Keep each reply under about 200 words unless you are asked for a written summary.\n\nHow to recommend:\n- Tie every recommendation to something in the report: a domain and its score, a flag, a layer or a milestone. Say which.\n- Follow the report's Next steps and their order. Work from the foundation first. When Governance & Risk is low, do not recommend major platform purchases or migrations; say why they should wait. Respect the \"Hold off on\" line.\n- Use the milestones for the next stage of a domain as the concrete actions, since they are the assessment's own definition of progress.\n- Make actions small and concrete: something an IT team can start this month, with a named owner and a first step.\n- Give at most three actions at a time, in the order to do them.\n- When you are asked for the Enhanced Report, or once you have asked your questions, offer to write it: a one-page summary with where the organization stands, the three things that matter most, a 90-day plan with owners, what to hold off on, and the questions still open.\n\nHow to handle the evidence:\n- Be honest. Do not flatter. Say what the numbers show, including uncomfortable parts such as blind spots, and say it with respect.\n- Use only what is in the report and what the person tells you. Do not invent facts, figures, products or quotes. If you need something, ask for it.\n- Do not recalculate, adjust or dispute the scores. They come from the assessment's fixed rules.\n- Stakeholder comments are unattributed. Never guess, hint at or help work out who said what, and do not repeat a comment in a way that would identify its author.\n- If the report's status is not \"Complete\", say that the result is partial and what is missing.\n\nScope and tone:\n- Stay with IT maturity: governance, infrastructure, identity, end-user services, applications and data. You may reference frameworks such as NIST CSF 2.0, CIS Controls, ITIL 4 and COBIT where they help, but do not claim the organization is compliant with any of them.\n- Recommend practices and categories of tools, not specific vendors, unless the person names the vendors they use.\n- For legal, HR, procurement or specific security incident questions, say this is outside your role and suggest who could help.\n- Be plain and direct. Write as a trusted adviser would speak to a CIO, without jargon or sales language.\n- If asked about hiring help, say an outside facilitator is most useful when the first step stalls. Do not sell.",
+  "context": "The IT Maturity Assessment is a guided interview from 5iveDays Strategy. Its premise: IT maturity is measured by what holds without heroics. It rates 22 IT domains on a five-level scale (Initial, Managed, Standardized, Predictable, Optimizing), anchored in governance, and compares IT leadership's view with what IT staff and business users experience.\n\nHow it runs:\n- Scope: the facilitator can mark domains out of scope (for example physical security run by facilities). Out-of-scope domains are skipped and layer weights re-balance. The report lists which domains were assessed.\n- Round 1: one IT leader rates each domain in scope from 1 to 5 by choosing the description closest to reality today. A rating of 3 or higher must be backed by that stage's milestones.\n- Round 2: 2 or more IT staff and business users rate the same domains without seeing the leader's answers. They also say which of the leader's milestones they have seen first-hand, and whether they see the same root cause the leader named for the weakest domains.\n\nThe five layers (each layer's score is the average of its domains in scope):\n- Governance & Risk (foundation, 30% of the index): Whether change, security, recovery and compliance are controlled. The foundation everything else depends on: maturity elsewhere won't hold without it. Domains: GV1 Change Management, GV2 Cyber Security, GV3 Disaster Recovery & Continuity, GV4 IT Compliance & SOX Controls.\n- Infrastructure (platform, 20% of the index): Whether the network, servers, storage and physical systems are standardized, resilient, current and secure. Domains: IN1 Network Infrastructure, IN2 Server & Cloud Systems, IN3 Storage & Data Retention, IN4 Physical Security Systems.\n- Identity & Access (access, 15% of the index): Whether the right people get the right access at the right time, and lose it when they should. Domains: IA1 Identity & Access Management, IA2 Onboarding & Offboarding, IA3 File & Folder Access.\n- End-User Services (service, 15% of the index): Whether the tools and support people use every day are consistent, reliable and easy to use. Domains: EU1 Service Desk & IT Service Management, EU2 Endpoint Management, EU3 Mobility & Remote Work, EU4 Collaboration, EU5 Audio & Video Conferencing, EU6 Printing, EU7 Application Support (Tier 1).\n- Applications & Data (value, 20% of the index): Whether business applications and data are owned, governed, integrated and kept current. Domains: AD1 Business Applications, AD2 Legacy Applications, AD3 Database Management, AD4 Data Engineering & Analytics.\n\nThe five maturity levels (index on a scale of 1 to 5):\n- 1 Initial (1.00 to 1.49): Practices are inconsistent and crisis-driven. Systems were deployed quickly without strategic planning, and results depend on who happens to be available.\n- 2 Managed (1.50 to 2.49): A management foundation exists, but operations are disjointed. Little integration or improvement planning, little documentation and mostly tribal knowledge.\n- 3 Standardized (2.50 to 3.49): Implementation and processes are consistent and documented, with only minimal, deliberate deviations from the standards.\n- 4 Predictable (3.50 to 4.49): Systems deliver reliable results because variation is controlled. Little care and feeding is needed, and work is automated wherever possible.\n- 5 Optimizing (4.50 to 5.00): Continuously improving and watching for new developments. Regular operations need no manual intervention; people work on enhancements.\n\nHow scores are adjusted:\n- Unverified claim: a leader rating of 3 or higher scores one level lower unless at least half of that stage's milestones are in place.\n- Fragile signal: a domain rated 2 or more levels above Governance & Risk that rests on one or two people or a past project scores one level lower.\n- Composite: each domain's score is the average of the leader's adjusted score and every stakeholder rating, minus 0.5 if it is fractured.\n- Governance ceiling: the index cannot exceed the Governance & Risk score plus one.\n- Optimizing requires a Governance & Risk score of 4 or higher.\n\nFlags:\n- Blind spot: the leader scored a domain 1.5 or more above the stakeholders' average. IT leadership believes something works that others don't experience.\n- Hidden strength: the leader scored it 1.5 or more below the stakeholders' average.\n- Fracture: stakeholder ratings differ by 2 or more. Different teams or sites get different service.\n- Alignment index: 100% means every respondent gave the same rating on every domain.\n\nNext steps in the report:\n- Initial and Managed: Stabilize. IT runs on effort and individual knowledge. The work is to put governance and ownership in place before investing in new tools. Hold off on: Major platform purchases or migrations. They would automate processes that aren't defined yet.\n- Standardized: Automate and measure. Standards are in place. The work is to make results predictable: automate what's documented and measure what matters. Hold off on: Adding new platforms before the current ones are automated and measured.\n- Predictable and Optimizing: Optimize and sustain. IT runs predictably. The work is to keep improving and make sure maturity survives turnover, growth and acquisitions. Hold off on: Assuming maturity will survive key staff leaving, a merger or a major migration without deliberate work.\n- Work starts at the foundation: Governance & Risk if it scores below 3, otherwise the lowest layer.\n\nReference frameworks the domains were checked against: NIST Cybersecurity Framework 2.0, CIS Controls v8, ITIL 4, COBIT 2019 and CMMI-style maturity levels. The milestones are the assessment's own; the frameworks are context, not scoring criteria."
  },
  "roles": [
   {

@@ -20,6 +20,7 @@ const C = Object.assign({
   coherence: "Organizational coherence", readout: "Cohesion readout", levelWord: "Cohesion level",
   overview: "", r1Text: "", r2Text: "", scaleTitle: "Five levels" }, FW.copy || {});
 const KEY = C.key;
+const ico = (n, cls = "ico") => { const g = n && window.ICONS && window.ICONS[n]; return g ? `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${g}</svg>` : ""; };
 const stTag = st => [st.role, st.kind].filter(Boolean).join(" · ");
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -163,8 +164,8 @@ function vOverview(){
   <div><div class="eyebrow">How it works</div>
   <h2 class="title">${esc(C.thesis)}</h2>
   <p class="lede">${esc(C.overview.replace("{n}", DIMS.length))} A leader answers first; then two or more ${esc(C.who)} answer the same questions blind. Where they disagree is part of the result.</p></div>
-  <div class="spine">${LAYERS.map(L => `<div class="band"><div><div class="role">${esc(L.role)} · ${Math.round(L.weight*100)}%</div><div class="nm">${esc(L.name)}</div></div>
-    <div><div class="small">${esc(L.desc)}</div><div class="dims">${DIMS.filter(d => d.layer === L.id).map(d => `<span class="chip"><span class="mono">${d.id}</span>${esc(d.name)}</span>`).join("")}</div></div></div>`).join("")}</div>
+  <div class="spine">${LAYERS.map(L => `<div class="band"><div>${L.icon ? `<div class="lyr-ico">${ico(L.icon)}</div>` : ""}<div class="role">${esc(L.role)} · ${Math.round(L.weight*100)}%</div><div class="nm">${esc(L.name)}</div></div>
+    <div><div class="small">${esc(L.desc)}</div><div class="dims">${DIMS.filter(d => d.layer === L.id).map(d => `<span class="chip">${ico(d.icon)}<span class="mono">${d.id}</span>${esc(d.name)}</span>`).join("")}</div></div></div>`).join("")}</div>
   <div><h3>${esc(C.scaleTitle)}</h3>${scaleStrip()}</div>
   ${vScope()}
   <div class="grid2">
@@ -186,8 +187,8 @@ function vScope(){
   if (!C.scopeTitle) return "";
   const out = new Set(S.scope || []);
   return `<div class="panel stack" id="scope"><div><h3 style="margin:0 0 4px">${esc(C.scopeTitle)}</h3><p class="small" style="margin:0;max-width:70ch">${esc(C.scopeText)}</p></div>
-    <div class="scope-grid">${LAYERS.map(L => `<fieldset class="scope-col"><legend>${esc(L.name)}</legend>${ALL_DIMS.filter(d => d.layer === L.id).map(d =>
-      `<label class="check"><input type="checkbox" id="scope-${d.id}" data-act="scope" data-v="${d.id}" ${out.has(d.id) ? "" : "checked"}><span><span class="mono small">${d.id}</span> ${esc(d.name)}</span></label>`).join("")}</fieldset>`).join("")}</div>
+    <div class="scope-grid">${LAYERS.map(L => `<fieldset class="scope-col"><legend>${ico(L.icon)} ${esc(L.name)}</legend>${ALL_DIMS.filter(d => d.layer === L.id).map(d =>
+      `<label class="check"><input type="checkbox" id="scope-${d.id}" data-act="scope" data-v="${d.id}" ${out.has(d.id) ? "" : "checked"}><span>${ico(d.icon)} ${esc(d.name)}</span></label>`).join("")}</fieldset>`).join("")}</div>
     <p class="small" style="margin:0">${DIMS.length} of ${ALL_DIMS.length} domains in scope.</p></div>`;
 }
 function blankProfile(){
@@ -297,7 +298,7 @@ function anchorList(d, rating, act){
       <span class="lvl"><span class="sw" style="background:${LVCOL[i]}"></span>${n} ${esc(lab)}</span><span class="txt">${esc(txt)}</span></button>`; }).join("")}</div>`;
 }
 function dimMap(cur, answered, act){
-  return `<div class="dimmap">${LAYERS.map(L => `<div class="grp"><span>${L.name}</span>${DIMS.map((d, i) => d.layer !== L.id ? "" :
+  return `<div class="dimmap">${LAYERS.map(L => `<div class="grp"><span>${ico(L.icon)}${L.name}</span>${DIMS.map((d, i) => d.layer !== L.id ? "" :
     `<button class="${answered(d) ? "ans" : ""} ${i === cur ? "cur" : ""}" data-act="${act}" data-v="${i}" title="${esc(d.name)}" aria-label="${d.id} ${esc(d.name)}">${d.id.slice(2)}</button>`).join("")}</div>`).join("")}</div>`;
 }
 
@@ -333,8 +334,8 @@ function vR1(){
   const syNote = d.layer !== F && sy != null && !light ? `<div class="notice">${LAYER[F].name} layer ${fmt(sy)}. Ratings of ${Math.ceil(sy + 2 - 1e-9)} or higher here get the dependency question.</div>` : "";
   return `${dimMap(i, dd => S.leader.answers[dd.id]?.rating, "r1dim")}
   <div class="stack">
-    <div class="qhead"><div class="eyebrow">${esc(L.name)} layer · ${esc(L.role)} · ${d.id}</div><div class="eyebrow">Question ${i + 1} of ${DIMS.length}</div></div>
-    <div><h2 class="title">${esc(d.name)}</h2><p class="question">${esc(d.q)}</p></div>
+    <div class="qhead"><div class="eyebrow">${ico(L.icon)} ${esc(L.name)} layer · ${esc(L.role)} · ${d.id}</div><div class="eyebrow">Question ${i + 1} of ${DIMS.length}</div></div>
+    <div><h2 class="title ttl">${d.icon ? `<span class="title-ico">${ico(d.icon)}</span>` : ""}<span>${esc(d.name)}</span></h2><p class="question">${esc(d.q)}</p></div>
     ${syNote}
     ${anchorList(d, r, "rate")}
     ${branch}${dep}${nextList}
@@ -347,7 +348,7 @@ function vR1(){
 function layerBars(layer, alt){
   return `<div class="bars">${LAYERS.map(L => { const v = layer[L.id], w = v == null ? 0 : (v - 1) / 4 * 100;
     const a = alt ? alt[L.id] : null;
-    return `<div class="bar-row"><span>${L.name}</span><div class="track">${[25,50,75].map(t => `<span class="tick" style="left:${t}%"></span>`).join("")}<div class="fill" style="width:${w}%"></div>${a != null ? `<div class="fill alt" style="width:${(a - 1) / 4 * 100}%"></div>` : ""}</div><span class="mono">${fmt(v)}</span></div>`; }).join("")}</div>`;
+    return `<div class="bar-row"><span class="bar-lbl">${ico(L.icon)}<span>${L.name}</span></span><div class="track">${[25,50,75].map(t => `<span class="tick" style="left:${t}%"></span>`).join("")}<div class="fill" style="width:${w}%"></div>${a != null ? `<div class="fill alt" style="width:${(a - 1) / 4 * 100}%"></div>` : ""}</div><span class="mono">${fmt(v)}</span></div>`; }).join("")}</div>`;
 }
 
 function vR1Result(){
@@ -416,7 +417,7 @@ function vR2Int(){
     if (S.mode === "full" && r === 3) br = `<div class="branch"><div class="tag">Tension probe</div><p class="question" style="font-size:17px;margin-bottom:10px">${esc(d.tension)}</p><textarea id="snote-${d.id}" data-bind="snote" placeholder="Notes">${esc(a.note)}</textarea></div>`;
     if (S.mode === "full" && r && r <= 2) br = `<div class="branch warn"><div class="tag">Root cause</div>${FW.roots[d.layer].map((t, k) => `<label class="check"><input type="radio" name="sroot-${d.id}" id="sroot-${d.id}-${k}" data-act="sroot" data-v="${esc(t)}" ${a.root === t ? "checked" : ""}><span>${esc(t)}</span></label>`).join("")}<textarea id="snote-${d.id}" data-bind="snote" placeholder="The story behind it">${esc(a.note)}</textarea></div>`;
     body = `${dimMap(idx, dd => st.answers[dd.id]?.rating, "sdim")}<div class="stack">${head}
-      <div><div class="eyebrow">${esc(LAYER[d.layer].name)} layer · ${d.id} · blind rating</div><h2 class="title">${esc(d.name)}</h2><p class="question">${esc(d.qs)}</p></div>
+      <div><div class="eyebrow">${ico(LAYER[d.layer].icon)} ${esc(LAYER[d.layer].name)} layer · ${d.id} · blind rating</div><h2 class="title ttl">${d.icon ? `<span class="title-ico">${ico(d.icon)}</span>` : ""}<span>${esc(d.name)}</span></h2><p class="question">${esc(d.qs)}</p></div>
       ${anchorList(d, r, "srate")}${br}${nav(!!r)}</div>`;
   } else if (step.k === "verify"){
     body = `<div class="stack">${head}<div><div class="eyebrow">Part B</div><h2 class="title">Verify the strengths</h2>
@@ -482,7 +483,7 @@ function vResults(){
   <div class="panel"><h3>By domain</h3>
   <div class="plot"><table><thead><tr><th>Domain</th><th style="width:44%">1 ${FW.levels[0].name} → 5 ${FW.levels[4].name}</th><th>Gap</th><th>Score</th><th>Flag</th></tr></thead><tbody>
   ${DIMS.map(d => { const x = c.det[d.id];
-    return `<tr><td><span class="mono small">${d.id}</span> ${esc(d.name)}</td>
+    return `<tr><td><span class="dim-cell">${ico(d.icon)}<span>${esc(d.name)}</span></span></td>
     <td><div class="lane"><span class="axis"></span>${[0,25,50,75,100].map(t => `<span class="g" style="left:${t}%"></span>`).join("")}
       ${x.s.map(v => `<span class="sd" style="left:${pos(v)}"></span>`).join("")}<span class="cm" style="left:${pos(x.comp)}" title="Composite ${fmt(x.comp)}"></span><span class="ld" style="left:${pos(x.L)}" title="Leader ${x.L}"></span></div></td>
     <td class="mono">${x.gap >= 0 ? "+" : ""}${fmt(x.gap, 1)}</td><td class="mono">${fmt(x.comp)}</td>
