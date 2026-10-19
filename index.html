@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>5iveLevels IT Maturity Assessment</title>
+<meta name="description" content="A facilitated IT maturity assessment from 5iveDays Strategy that rates 22 IT domains from governance to data, and compares IT leadership's view with what staff and the business experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="eyebrow">5iveDays Strategy</div>
+      <h1>5iveLevels IT Maturity Assessment</h1>
+      <div class="org" id="orgline"></div>
+    </div>
+    <div class="row">
+      <div class="seg" role="group" aria-label="Interview mode">
+        <button id="mode-light" data-act="mode" data-v="light">Light</button>
+        <button id="mode-full" data-act="mode" data-v="full">Full</button>
+      </div>
+      <button class="btn" id="session-btn" data-act="session">Session</button>
+    </div>
+  </header>
+  <div class="levelstrip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="shell">
+    <nav class="rail" id="rail" aria-label="Assessment steps"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+<div id="sheet"></div>
+<script src="assets/config.js"></script>
+<script src="assets/framework.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

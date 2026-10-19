@@ -1,0 +1,9 @@
+# Static site: no build step. Netlify publishes the repository root as is.
+[build]
+  publish = "."
+
+# Check for fresh scripts and styles on every visit, so updates show up right away.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
